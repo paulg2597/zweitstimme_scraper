@@ -12,7 +12,7 @@ try:
     erst_content = json.dumps(json.loads(erst_resp.content))
 
     for file, name in zip([zweit_content, erst_content], ["zweit_content", "erst_content"]):
-        with open(f'{os.getcwd()}/data/{name}_{datetime.now().isoformat()[:-10]}.json', 'w') as f:
+        with open(f'{os.getcwd()}/zweitstimme_org/data/{name}_{datetime.now().isoformat()[:-10]}.json', 'w') as f:
             f.write(file)
 except Exception as e:
     bot = telebot.TeleBot(os.environ['token'])
